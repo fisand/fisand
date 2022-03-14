@@ -30,6 +30,7 @@
     "vitest": "0.2.5"
   },
   "dependencies": {
+    "@gitbeaker/node": "^35.4.0",
     "chalk": "^5.0.1",
     "enquirer": "^2.3.6",
     "fs-extra": "^10.0.1",
