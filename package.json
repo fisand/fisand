@@ -28,5 +28,13 @@
     "tsup": "5.11.13",
     "typescript": "4.5.4",
     "vitest": "0.2.5"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "enquirer": "^2.3.6",
+    "fs-extra": "^10.0.1",
+    "magic-string": "^0.26.1",
+    "ora": "^6.1.0",
+    "yargs": "^17.3.1"
   }
 }
