@@ -8,6 +8,9 @@
   "files": [
     "dist"
   ],
+  "bin": {
+    "fisand": "bin/index.js"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
@@ -16,6 +19,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
+    "start": "tsup src/index.ts --format cjs,esm --watch",
     "build-fast": "tsup src/index.ts --format cjs,esm",
     "build": "pnpm run build-fast -- --dts-resolve",
     "test": "vitest run",
@@ -24,6 +28,8 @@
   "license": "MIT",
   "devDependencies": {
     "@egoist/prettier-config": "1.0.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/yargs": "^17.0.9",
     "prettier": "2.5.1",
     "tsup": "5.11.13",
     "typescript": "4.5.4",
@@ -31,7 +37,7 @@
   },
   "dependencies": {
     "@gitbeaker/node": "^35.4.0",
-    "chalk": "^5.0.1",
+    "chalk": "4.1.2",
     "enquirer": "^2.3.6",
     "fs-extra": "^10.0.1",
     "magic-string": "^0.26.1",

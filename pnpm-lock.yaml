@@ -3,7 +3,9 @@ lockfileVersion: 5.3
 specifiers:
   '@egoist/prettier-config': 1.0.0
   '@gitbeaker/node': ^35.4.0
-  chalk: ^5.0.1
+  '@types/fs-extra': ^9.0.13
+  '@types/yargs': ^17.0.9
+  chalk: 4.1.2
   enquirer: ^2.3.6
   fs-extra: ^10.0.1
   magic-string: ^0.26.1
@@ -16,7 +18,7 @@ specifiers:
 
 dependencies:
   '@gitbeaker/node': 35.4.0
-  chalk: 5.0.1
+  chalk: 4.1.2
   enquirer: 2.3.6
   fs-extra: 10.0.1
   magic-string: 0.26.1
@@ -25,6 +27,8 @@ dependencies:
 
 devDependencies:
   '@egoist/prettier-config': 1.0.0
+  '@types/fs-extra': 9.0.13
+  '@types/yargs': 17.0.9
   prettier: 2.5.1
   tsup: 5.11.13_typescript@4.5.4
   typescript: 4.5.4
@@ -138,6 +142,12 @@ packages:
     resolution: {integrity: sha512-/ceqdqeRraGolFTcfoXNiqjyQhZzbINDngeoAq9GoHa8PPK1yNzTaxWjA6BFWp5Ua9JpXEMSS4s5i9tS0hOJtw==}
     dev: true
 
+  /@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+    dependencies:
+      '@types/node': 17.0.21
+    dev: true
+
   /@types/http-cache-semantics/4.0.1:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
     dev: false
@@ -150,7 +160,6 @@ packages:
 
   /@types/node/17.0.21:
     resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==}
-    dev: false
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -161,6 +170,16 @@ packages:
     dependencies:
       '@types/node': 17.0.21
     dev: false
+
+  /@types/yargs-parser/21.0.0:
+    resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
+    dev: true
+
+  /@types/yargs/17.0.9:
+    resolution: {integrity: sha512-Ci8+4/DOtkHRylcisKmVMtmVO5g7weUVCKcsu1sJvF1bn0wExTmbHmhFKj7AnEm0de800iovGhdSKzYnzbaHpg==}
+    dependencies:
+      '@types/yargs-parser': 21.0.0
+    dev: true
 
   /ansi-colors/4.1.1:
     resolution: {integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==}
@@ -324,6 +343,14 @@ packages:
       escape-string-regexp: 1.0.5
       supports-color: 5.5.0
     dev: true
+
+  /chalk/4.1.2:
+    resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+    dev: false
 
   /chalk/5.0.1:
     resolution: {integrity: sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==}
@@ -1012,6 +1039,11 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /has-flag/4.0.0:
+    resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
+    engines: {node: '>=8'}
+    dev: false
+
   /has-symbols/1.0.3:
     resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==}
     engines: {node: '>= 0.4'}
@@ -1645,6 +1677,13 @@ packages:
     dependencies:
       has-flag: 3.0.0
     dev: true
+
+  /supports-color/7.2.0:
+    resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
+    engines: {node: '>=8'}
+    dependencies:
+      has-flag: 4.0.0
+    dev: false
 
   /thenify-all/1.6.0:
     resolution: {integrity: sha1-GhkY1ALY/D+Y+/I02wvMjMEOlyY=}
