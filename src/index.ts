@@ -24,7 +24,7 @@ async function main() {
     {
       type: ({ results }) =>
         p.select({
-          message: `Pick a project template"`,
+          message: `Pick a project template`,
           initialValue: "dapp",
           options: [
             { value: "vite-wagmi-starter", hint: "react" },
@@ -35,10 +35,10 @@ async function main() {
         }),
       path: () =>
         p.text({
-          message: "Where should we create your project?",
+          message: "Name your project",
           placeholder: "your-dapp",
           validate: (value) => {
-            if (!value) return "Please enter a path."
+            if (!value) return "Please enter a name."
           },
         }),
       install: () =>
