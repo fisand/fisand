@@ -2,7 +2,7 @@ import * as p from "@clack/prompts"
 import color from "picocolors"
 import { exec as exec_ } from "node:child_process"
 import { promisify } from "node:util"
-import degit from "degit"
+import tiged from "tiged"
 
 const exec = promisify(exec_)
 
@@ -17,7 +17,7 @@ async function runCommand(cmd: string) {
 }
 
 async function degitRepo(name: string, dest: string) {
-  const emitter = degit("github:fisand/" + name, {
+  const emitter = tiged("github:fisand/" + name, {
     cache: false,
     force: true,
     verbose: true,
