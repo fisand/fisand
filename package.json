@@ -1,7 +1,7 @@
 {
   "name": "fisand",
-  "version": "0.0.2",
-  "description": "My awesome typescript library",
+  "version": "0.0.3",
+  "description": "download fisand template tool",
   "publishConfig": {
     "access": "public"
   },
@@ -28,6 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "@egoist/prettier-config": "1.0.0",
+    "@types/degit": "^2.8.3",
     "@types/fs-extra": "^9.0.13",
     "@types/yargs": "^17.0.9",
     "prettier": "2.5.1",
@@ -39,6 +40,7 @@
     "@clack/prompts": "^0.6.3",
     "@gitbeaker/node": "^35.4.0",
     "chalk": "4.1.2",
+    "degit": "^2.8.4",
     "enquirer": "^2.3.6",
     "fs-extra": "^10.0.1",
     "magic-string": "^0.26.1",

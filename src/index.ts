@@ -2,17 +2,28 @@ import * as p from "@clack/prompts"
 import color from "picocolors"
 import { exec as exec_ } from "node:child_process"
 import { promisify } from "node:util"
+import degit from "degit"
 
-const exec = promisify(exec_);
+const exec = promisify(exec_)
 
 async function runCommand(cmd: string) {
   try {
-    const {stdout, stderr} = await exec(cmd);
-    console.log(stdout);
-    console.error(stderr);
+    const { stdout, stderr } = await exec(cmd)
+    console.log(stdout)
+    console.error(stderr)
   } catch (err) {
-    console.error(`Error: ${err}`);
+    console.error(`Error: ${err}`)
   }
+}
+
+async function degitRepo(name: string, dest: string) {
+  const emitter = degit("github:fisand/" + name, {
+    cache: false,
+    force: true,
+    verbose: true,
+  })
+
+  return emitter.clone(dest)
 }
 
 async function main() {
@@ -55,9 +66,14 @@ async function main() {
     },
   )
 
+  if (project.type === 'astro-seed') {
+    p.cancel('Astro-seed is still under development.')
+    return
+  }
+
   const s = p.spinner()
   s.start(`Download template ${project.type}`)
-  await runCommand(`npx degit fisand/${project.type} ${project.path}`)
+  await degitRepo(project.type as string, project.path)
   s.stop("Download complete")
 
   if (project.install) {
@@ -67,7 +83,7 @@ async function main() {
     s.stop("Installed via pnpm")
   }
 
-  let nextSteps = `cd  ${project.path}     \n${
+  let nextSteps = `cd ${project.path}     \n${
     project.install ? "" : "pnpm install\n"
   }pnpm dev`
 

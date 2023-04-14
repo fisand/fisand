@@ -4,9 +4,11 @@ specifiers:
   '@clack/prompts': ^0.6.3
   '@egoist/prettier-config': 1.0.0
   '@gitbeaker/node': ^35.4.0
+  '@types/degit': ^2.8.3
   '@types/fs-extra': ^9.0.13
   '@types/yargs': ^17.0.9
   chalk: 4.1.2
+  degit: ^2.8.4
   enquirer: ^2.3.6
   fs-extra: ^10.0.1
   magic-string: ^0.26.1
@@ -22,6 +24,7 @@ dependencies:
   '@clack/prompts': 0.6.3
   '@gitbeaker/node': 35.4.0
   chalk: 4.1.2
+  degit: 2.8.4
   enquirer: 2.3.6
   fs-extra: 10.0.1
   magic-string: 0.26.1
@@ -31,6 +34,7 @@ dependencies:
 
 devDependencies:
   '@egoist/prettier-config': 1.0.0
+  '@types/degit': 2.8.3
   '@types/fs-extra': 9.0.13
   '@types/yargs': 17.0.9
   prettier: 2.5.1
@@ -363,6 +367,10 @@ packages:
 
   /@types/chai/4.3.4:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==}
+    dev: true
+
+  /@types/degit/2.8.3:
+    resolution: {integrity: sha512-CL7y71j2zaDmtPLD5Xq5S1Gv2dFoHl0/GBZm6s39Mj/ls28L3NzAOqf7H4H0/2TNVMgMjMVf9CAFYSjmXhi3bw==}
     dev: true
 
   /@types/fs-extra/9.0.13:
@@ -827,6 +835,12 @@ packages:
   /defer-to-connect/2.0.1:
     resolution: {integrity: sha512-4tvttepXG1VaYGrRibk5EwJd1t4udunSOVMdLSAL6mId1ix438oPwPZMALY41FCijukO1L0twNcGsdzS7dHgDg==}
     engines: {node: '>=10'}
+    dev: false
+
+  /degit/2.8.4:
+    resolution: {integrity: sha512-vqYuzmSA5I50J882jd+AbAhQtgK6bdKUJIex1JNfEUPENCgYsxugzKVZlFyMwV4i06MmnV47/Iqi5Io86zf3Ng==}
+    engines: {node: '>=8.0.0'}
+    hasBin: true
     dev: false
 
   /delay/5.0.0:
