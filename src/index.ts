@@ -60,7 +60,7 @@ async function main() {
       install: () =>
         p.confirm({
           message: "Install dependencies?",
-          initialValue: false,
+          initialValue: true,
         }),
     },
     {
