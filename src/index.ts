@@ -33,21 +33,26 @@ async function main() {
 
   const project = await p.group(
     {
-      type: ({ results }) =>
+      template: ({ results }) =>
         p.select({
           message: `Pick a project template`,
-          initialValue: "dapp",
+          initialValue: "app-template",
           options: [
             { value: "vite-wagmi-starter", hint: "react" },
-            { value: "webext-dapp-template", hint: "react" },
-            { value: "vite-homepage-seed", hint: "vue" },
-            { value: "astro-seed", hint: "todo" },
+            { value: "wagmi-wxt-starter", hint: "react" },
+            { value: "homepage-starter", hint: "react" },
+
+            { value: "nitro-trpc-starter", hint: "fullstack" },
+            { value: "remix-starter", hint: "remix" },
+
+            { value: "vite-wagmi-electron", hint: "electron" },
+
           ],
         }),
       path: () =>
         p.text({
           message: "Name your project",
-          placeholder: "your-dapp",
+          placeholder: "your-app",
           validate: (value) => {
             if (!value) return "Please enter a name."
           },
@@ -66,14 +71,9 @@ async function main() {
     },
   )
 
-  if (project.type === 'astro-seed') {
-    p.cancel('Astro-seed is still under development.')
-    return
-  }
-
   const s = p.spinner()
-  s.start(`Download template ${project.type}`)
-  await degitRepo(project.type as string, project.path)
+  s.start(`Download template ${project.template}`)
+  await degitRepo(project.template as string, project.path)
   s.stop("Download complete")
 
   if (project.install) {
@@ -83,9 +83,8 @@ async function main() {
     s.stop("Installed via pnpm")
   }
 
-  let nextSteps = `cd ${project.path}     \n${
-    project.install ? "" : "pnpm install\n"
-  }pnpm dev`
+  let nextSteps = `cd ${project.path}     \n${project.install ? "" : "pnpm install\n"
+    }pnpm dev`
 
   p.note(nextSteps, "next:")
 

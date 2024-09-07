@@ -28,23 +28,22 @@
   "license": "MIT",
   "devDependencies": {
     "@egoist/prettier-config": "1.0.0",
-    "@types/fs-extra": "^9.0.13",
-    "@types/yargs": "^17.0.9",
-    "prettier": "2.5.1",
-    "tsup": "5.11.13",
-    "typescript": "4.5.4",
-    "vitest": "0.30.1"
+    "@types/fs-extra": "^11.0.4",
+    "@types/yargs": "^17.0.33",
+    "prettier": "3.3.3",
+    "tsup": "8.2.4",
+    "typescript": "5.5.4",
+    "vitest": "2.0.5"
   },
   "dependencies": {
-    "@clack/prompts": "^0.6.3",
-    "@gitbeaker/node": "^35.4.0",
-    "chalk": "4.1.2",
-    "enquirer": "^2.3.6",
-    "fs-extra": "^10.0.1",
-    "magic-string": "^0.26.1",
-    "ora": "^6.1.0",
-    "picocolors": "^1.0.0",
-    "tiged": "^2.12.4",
-    "yargs": "^17.3.1"
+    "@clack/prompts": "^0.7.0",
+    "@gitbeaker/node": "^35.8.1",
+    "chalk": "5.3.0",
+    "enquirer": "^2.4.1",
+    "fs-extra": "^11.2.0",
+    "magic-string": "^0.30.11",
+    "ora": "^8.1.0",
+    "picocolors": "^1.1.0",
+    "yargs": "^17.7.2"
   }
 }
