@@ -30,6 +30,7 @@ async function main() {
   console.clear()
 
   p.intro(`${color.bgCyan(color.black(" fisand "))}`)
+  p.log.message(`fisand is a CLI tool to quickly scaffold new projects. ${color.underline(color.cyan('https://github.com/fisand'))}`)
 
   const project = await p.group(
     {
