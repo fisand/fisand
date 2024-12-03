@@ -39,15 +39,15 @@ async function main() {
           message: `Pick a project template`,
           initialValue: "app-template",
           options: [
-            { value: "vite-wagmi-starter", hint: "react" },
-            { value: "wagmi-wxt-starter", hint: "react" },
-            { value: "homepage-starter", hint: "react" },
+            { value: "f3-app", hint: "fullstack-monorepo" },
 
-            { value: "nitro-trpc-starter", hint: "fullstack" },
+            { value: "vite-wagmi-starter", hint: "react-spa" },
+            { value: "homepage-starter", hint: "react-ssg" },
+
+            { value: "wagmi-wxt-starter", hint: "browser-extension" },
+
             { value: "remix-starter", hint: "remix" },
-
             { value: "vite-wagmi-electron", hint: "electron" },
-
           ],
         }),
       path: () =>
